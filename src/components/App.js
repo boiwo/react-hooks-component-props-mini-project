@@ -1,22 +1,18 @@
+import React from "react";
+import blogData from "../data/blog";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList"
+console.log(blogData);
 
-
-import React from 'react';
-import Header from './Header';
-import About from './About';
-import ArticleList from './ArticleList'; // Import the ArticleList component
-import blogData from '../data/blog'; // Import the blog data
-
-const App = () => {
-  const { name, image, about, articles } = blogData;
-
+function App() {
   return (
-    <div>
-      <Header name={name} />
-      <About image={image} about={about} />
-      <ArticleList articles={articles} /> {/* Pass the articles data as a prop */}
-      {/* Other content of your app */}
+    <div className="App">
+      <Header name = {blogData.name} />
+      <About image={blogData.image} about={blogData.about}></About>
+      <ArticleList posts = {blogData.posts}/>
     </div>
   );
-};
+}
 
 export default App;
